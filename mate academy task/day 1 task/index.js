@@ -59,3 +59,21 @@ function makeDecision(fuelRemaining, distance, fuelConsumption) {
       return 'ask for help';
     }
   }
+  /* Працівникам Mate Exchange набридло конвертувати на калькуляторі валюту з гривні в обрану валюту.
+
+Напиши функцію convertCurrency, яка буде приймати amount в євро, exchangeRate — курс обміну (вартість 1 євро у вказаній валюті) 
+та currencyName — назву бажаної валюти. Якщо amount та exchangeRate додатні, функція має повертати рядок Give them {{x}} {{currencyName}}(s); інакше повертати рядок Enter valid data.
+
+Якщо результат не є цілим числом, округли значення до двох знаків після коми.
+*/
+
+function convertCurrency(amount, exchangeRate, currencyName) {
+    if (amount <= 0 || exchangeRate <= 0) {
+      return 'Enter valid data';
+    }
+  
+    let cash = parseFloat((amount * exchangeRate).toFixed(2));
+  
+    return `Give them ${cash} ${currencyName}(s)`
+  }
+  
